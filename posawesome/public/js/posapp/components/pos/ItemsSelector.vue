@@ -195,9 +195,10 @@ export default {
   watch: {
     filtred_items(new_value, old_value) {
       if (!this.pos_profile.pose_use_limit_search) {
-        if (new_value.length != old_value.length) {
-          this.update_items_details(new_value);
-        }
+        // if (new_value.length != old_value.length) {
+        //   this.update_items_details(new_value);
+        // }
+        this.update_items_details(new_value);
       }
     },
     customer_price_list() {
@@ -456,6 +457,7 @@ export default {
               const updated_item = r.message.find(
                 (element) => element.item_code == item.item_code
               );
+              console.log(`Update ${item.item_code} with actual quantity: ${updated_item.actual_qty}`);
               item.actual_qty = updated_item.actual_qty;
               item.serial_no_data = updated_item.serial_no_data;
               item.batch_no_data = updated_item.batch_no_data;
@@ -466,6 +468,7 @@ export default {
       });
     },
     update_cur_items_details() {
+      console.log(`update_cur_items_details`);
       this.update_items_details(this.filtred_items);
     },
     scan_barcoud() {
