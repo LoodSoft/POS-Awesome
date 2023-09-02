@@ -18,7 +18,6 @@
         class="text-uppercase primary--text"
       >
         <span class="font-weight-light">pos</span>
-        <span>awesome</span>
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
