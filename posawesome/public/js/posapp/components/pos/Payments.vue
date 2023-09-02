@@ -852,7 +852,6 @@ export default {
       this.is_cashback = true;
       this.sales_person = "";
 
-      evntBus.$emit("new_invoice", "false");
       this.back_to_invoice();
     },
     submit_invoice(print) {
@@ -897,6 +896,7 @@ export default {
               text: `Invoice ${r.message.name} is Submited`,
               color: "success",
             });
+            evntBus.$emit("new_invoice", "false");
             frappe.utils.play_sound("submit");
             this.addresses = [];
           }
