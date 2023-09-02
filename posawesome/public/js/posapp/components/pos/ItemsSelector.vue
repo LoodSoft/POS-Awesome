@@ -629,6 +629,9 @@ export default {
     evntBus.$on('update_customer_price_list', (data) => {
       this.customer_price_list = data;
     });
+    evntBus.$on("new_invoice", () => {
+      this.update_cur_items_details();
+    });
   },
 
   mounted() {
