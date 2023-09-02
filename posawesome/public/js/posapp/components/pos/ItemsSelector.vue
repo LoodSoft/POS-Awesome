@@ -634,7 +634,7 @@ export default {
   mounted() {
     this.scan_barcoud();
     evntBus.$on("new_invoice", () => {
-      this.update_cur_items_details();
+      setTimeout(() => {this.update_cur_items_details();}, 500);
     });
   },
 };
